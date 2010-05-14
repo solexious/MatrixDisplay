@@ -136,7 +136,10 @@ void DisplayToolbox::setPixel(int x, int y, int val, bool paint)
   // Y Cordinate
   // Value (either on or off, 1, 0)
   // Do you want to write this change straight to the display? (yes: slower)
-  disp->setPixel(calcDispNum(x), x, y, val, paint);   
+  //disp->setPixel(calcDispNum(x), x, y, val, paint);  
+  int dispNum = calcDispNum(x);                       // Updates x as well!
+  if (dispNum >= disp->getDisplayCount()) return; // Don't write to a non-existent display
+  disp->setPixel(dispNum, x, y, val, paint); 
 }
 
 // Fetch pixel
