@@ -1,0 +1,38 @@
+#######################################
+# Syntax Coloring Map For MatrixDisplay
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+MatrixDisplay	KEYWORD1
+DisplayToolbox	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getPixel	KEYWORD2
+setPixel 	KEYWORD2
+initDisplay 	KEYWORD2
+syncDisplays	KEYWORD2
+clear	KEYWORD2
+
+getDisplayWidth	KEYWORD2
+getDisplayHeight	KEYWORD2
+setMaster	KEYWORD2
+setSlave	KEYWORD2
+writeNibbles	KEYWORD2
+
+getDisplayCount	KEYWORD2
+getDisplayHeight	KEYWORD2
+getDisplayWidth	KEYWORD2
+copyBuffer	KEYWORD2
+shiftLeft	KEYWORD2
+shiftRight	KEYWORD2
+setBrightness	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
