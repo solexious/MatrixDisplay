@@ -115,6 +115,7 @@ MatrixDisplay::~MatrixDisplay()
 //
 void MatrixDisplay::initDisplay(uint8_t displayNum, uint8_t pin, bool master)
 {        
+    int myint = (int) displayNum;
 	// Associate the pin with this display
 	pDisplayPins[displayNum] = pin;
 	// init the hardware
@@ -126,9 +127,20 @@ void MatrixDisplay::initDisplay(uint8_t displayNum, uint8_t pin, bool master)
 	preCommand();
 	// Take advantage of successive mode and write the options
 	writeDataBE(8,HT1632_CMD_SYSDIS, true);
-	//sendOptionCommand(HT1632_CMD_MSTMD);
-	writeDataBE(8,HT1632_CMD_SYSON,true);
 	writeDataBE(8,HT1632_CMD_COMS10,true);
+	if(master)
+    {
+        writeDataBE(8,HT1632_CMD_MSTMD,true);
+        Serial.print(myint);
+        Serial.println(" is Master");
+    }
+    else
+    {
+        writeDataBE(8,HT1632_CMD_SLVMD,true);        
+        Serial.print(myint);
+        Serial.println(" is Slave");
+    }
+	writeDataBE(8,HT1632_CMD_SYSEN,true);
 	writeDataBE(8,HT1632_CMD_LEDON,true);
 	writeDataBE(8,HT1632_CMD_BLOFF,true);
 	writeDataBE(8,HT1632_CMD_PWM+15,true);
