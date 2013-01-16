@@ -20,6 +20,8 @@
 */
 
 
+#include <Arduino.h>   # Added for Arduino 1.0+ compatibility
+
 #if defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644__) // compiled as ATMega644
 //Atmega644 Version of fastWrite - for pins 0-15
 #define fWriteA(_pin_, _state_) ( _pin_ < 8 ? (_state_ ?  PORTB |= 1 << _pin_ : \
