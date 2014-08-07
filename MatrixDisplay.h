@@ -22,11 +22,18 @@
 #ifndef MATRIX_DISPLAY_GUARD
 #define MATRIX_DISPLAY_GUARD
 
+#if ARDUINO < 100
+#include <WProgram.h>
+#include <wiring.h>
+#else
+#include <Arduino.h>
+#endif
+
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include <wiring.h>
+
 #include "HardwareSerial.h"
 
 #include "ht1632_cmd.h"
